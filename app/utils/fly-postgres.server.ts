@@ -1,11 +1,13 @@
 import pg from 'pg';
-const pool = new pg.Pool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_NAME,
-  password: process.env.DB_PASSWORD,
-  port: parseInt(process.env.DB_PORT || '5432'),
-})
+// const pool = new pg.Pool({
+//   user: process.env.DB_USER,
+//   host: process.env.DB_HOST,
+//   database: process.env.DB_NAME,
+//   password: process.env.DB_PASSWORD,
+//   port: parseInt(process.env.DB_PORT || '5432'),
+// })
+
+const pool = new pg.Pool({connectionString: process.env.DATABASE_URL});
 
 async function pgGet(query: string) {
   const client = await pool.connect()
