@@ -29,3 +29,8 @@ export async function getUser(id: string) {
 export async function getUsers() {
   return await pgGet(`SELECT * FROM users`);
 }
+
+export async function createUser(name: string, email: string) {
+  const user = await pgGet(`INSERT INTO users (name, email) VALUES ('${name}', '${email}') RETURNING *`);
+  return user[0];
+}

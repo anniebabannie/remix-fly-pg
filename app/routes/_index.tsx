@@ -1,5 +1,5 @@
 import { json, LoaderFunctionArgs, type MetaFunction } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
+import { Form, Link, useLoaderData } from "@remix-run/react";
 import { getUsers } from "~/utils/fly-postgres.server";
 
 export const meta: MetaFunction = () => {
@@ -23,6 +23,7 @@ export default function Index() {
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.8" }}>
       <h1>Welcome to Remix</h1>
+      <Link to="/users/new">+ New User</Link>
       <ul>
         {users.map((user: any) => {
           return <li><a href={`/users/${user.id}`}>{user.name}</a></li>
