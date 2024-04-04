@@ -12,8 +12,8 @@ const pool = new pg.Pool({connectionString: process.env.DATABASE_URL});
 async function pgGet(query: string) {
   const client = await pool.connect()
   try {
-      const res = await client.query(query)
-      return res.rows
+    const res = await client.query(query)
+    return res.rows
   } catch (err) {
       console.error(err);
   } finally {
@@ -26,7 +26,7 @@ export async function getUser(id: string) {
   return user[0];
 }
 
-export async function getUsers() {
+export async function getAllsUsers() {
   return await pgGet(`SELECT * FROM users`);
 }
 
