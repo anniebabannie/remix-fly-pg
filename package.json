@@ -14,12 +14,10 @@
     "@remix-run/node": "^2.8.1",
     "@remix-run/react": "^2.8.1",
     "@remix-run/serve": "^2.8.1",
-    "@supabase/ssr": "^0.1.0",
     "isbot": "^4.1.0",
     "pg": "^8.11.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "supabase": "^1.153.1"
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@flydotio/dockerfile": "^0.5.4",
